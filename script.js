@@ -11,8 +11,8 @@ function getComputerSelection() {
     return(shapes[random]);
 }
 
-function getPlayerSelection() {
-    const playerSelection = (prompt('Please insert rock, paper or scissors: ')).toLowerCase();
+function getPlayerSelection(input) {
+    const playerSelection = input.toLowerCase();
     console.log(playerSelection);
     return(playerSelection);
 }
@@ -67,3 +67,15 @@ function game() {
     playRound(playerSelection, computerSelection);
     updateGameScoreMessage();
 }
+
+
+// UI
+const rockBtn = document.querySelector('#rockBtn');
+const paperBtn = document.querySelector('#paperBtn');
+const scissorsBtn = document.querySelector('#scissorsBtn');
+
+rockBtn.addEventListener('click', () => getPlayerSelection('ROCK') );
+
+paperBtn.addEventListener('click', () => getPlayerSelection('PAPER'));
+
+scissorsBtn.addEventListener('click', () => getPlayerSelection('SCISSORS'));
