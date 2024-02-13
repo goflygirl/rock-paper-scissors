@@ -11,14 +11,8 @@ function getComputerSelection() {
     return(shapes[random]);
 }
 
-function getPlayerSelection(input) {
-    const playerSelection = input.toLowerCase();
-    console.log(playerSelection);
-    return(playerSelection);
-}
-
-function playRound(playerSelection, computerSelection){
-
+function playRound(playerSelection){
+    let computerSelection = getComputerSelection();
         if(playerSelection === computerSelection){
             roundWinner = "tie";
     
@@ -45,28 +39,20 @@ function playRound(playerSelection, computerSelection){
 
 
     function updateGameScoreMessage(winner, playerSelection, computerSelection){
+        let scoreboard = '';
         if(winner === "player") {
-            console.log(playerSelection + " beats " + computerSelection);
-            return
+            scoreboard = (playerSelection + " beats " + computerSelection);
+            //console.log(scoreboard);
         }
         if(winner === "computer"){
-            console.log(computerSelection + " beats " + playerSelection);
-            return
+            scoreboard = (computerSelection + " beats " + playerSelection);
         } 
         if(winner === "tie") {
-            console.log(playerSelection + " ties with " + computerSelection);
-            return
+            scoreboard = (playerSelection + " ties with " + computerSelection);
         }
-
+        document.querySelector('#scoreboard').textContent = scoreboard;
+        return
     }
-
-function game() {
-
-    const computerSelection = getComputerSelection();
-    const playerSelection = getPlayerSelection();
-    playRound(playerSelection, computerSelection);
-    updateGameScoreMessage();
-}
 
 
 // UI
@@ -74,8 +60,8 @@ const rockBtn = document.querySelector('#rockBtn');
 const paperBtn = document.querySelector('#paperBtn');
 const scissorsBtn = document.querySelector('#scissorsBtn');
 
-rockBtn.addEventListener('click', () => getPlayerSelection('ROCK') );
+rockBtn.addEventListener('click', () => playRound('rock'));
+paperBtn.addEventListener('click', () => playRound('paper'));
+scissorsBtn.addEventListener('click', () => playRound('scissors'));
 
-paperBtn.addEventListener('click', () => getPlayerSelection('PAPER'));
-
-scissorsBtn.addEventListener('click', () => getPlayerSelection('SCISSORS'));
+updateGameScoreMessage();
