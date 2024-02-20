@@ -2,20 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Rock Paper Scissors</title>
+        <title>Rock Paper Scissors Game</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
     <body>
-        <button id="rockBtn">Rock</button>
-        <button id="paperBtn">Paper</button>
-        <button id="scissorsBtn">Scissors</button>
-        <div id="scoreboard"></div>
-        <div class="finalMessage"></div>
-        <div class="score" id="playerScore"></div>
-        <div class="score" id="computerScore"></div>
+        <div class="intro-text-container">
+            <h2>PLAY Rock Paper Scissors Game</h2>
+            <p>First to score 5 points wins the game!</p>
+        </div>
+        <div class="container">
+            <div><button id="rockBtn" class="button">Rock</button></div>
+            <div><button id="paperBtn" class="button">Paper</button></div>
+            <div><button id="scissorsBtn" class="button">Scissors</button></div>
+        </div>
+        
+        <div id="scoreboard">
+        </div>
+
+        <div class="container">
+            <div class="score" id="playerScore"></div>
+            <div class="score" id="computerScore"></div>
+        </div>
     </body>
 </html>

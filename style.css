@@ -1,6 +1,49 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
 #scoreboard{
     padding: 15px;
     text-align: center;
-    size: 16px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+}
+
+.container > div{
+    margin: 10px;
+}
+
+.intro-text-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.button{
+    background-color: #8B008B;
+    border: none;
+    color: whitesmoke;
+    padding: 15px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.button:hover:enabled{
+    background-color: #cb8ccb;
+    color: white;
+}
+
+.button:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
 }
